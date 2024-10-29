@@ -1,0 +1,70 @@
+.task-list-container {
+  scrollbar-width: thin;
+  scrollbar-color: #6A5ACD #1A1C22;
+}
+
+
+.task-list-container::-webkit-scrollbar {
+  width: 10px; 
+}
+
+.task-list-container::-webkit-scrollbar-track {
+  background: #1A1C22;
+  border-radius: 8px; 
+}
+
+.task-list-container::-webkit-scrollbar-thumb {
+  background: #6A5ACD; 
+  border-radius: 8px;
+}
+
+.task-list-container::-webkit-scrollbar-thumb:hover {
+  background: #836FFF;
+}
+
+
+.task-list-container.light-mode {
+  scrollbar-width: thin;
+  scrollbar-color: #007BFF #EAEAEA; 
+}
+
+
+.task-list-container.light-mode::-webkit-scrollbar {
+  width: 10px; 
+}
+
+.task-list-container.light-mode::-webkit-scrollbar-track {
+  background: #EAEAEA; 
+}
+
+.task-list-container.light-mode::-webkit-scrollbar-thumb {
+  background: #007BFF; 
+  border-radius: 8px; 
+}
+
+.task-list-container.light-mode::-webkit-scrollbar-thumb:hover {
+  background: #0056b3; 
+}
+
+
+/* App.css */
+body {
+  transition: background-color 0.3s ease;
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(5px); 
+}
+
+.fixed {
+  position: fixed;
+}
+
+.inset-0 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+
