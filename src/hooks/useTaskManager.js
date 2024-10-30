@@ -111,7 +111,14 @@ const handleAddTask = () => {
 
   const handleCancel = () => {
     setEditingId(null);
-    setNewTask('');
+    setSingleTask({
+      id: uuidv4(),
+      text: '',
+      dueDate: '',
+      priority: 'low',
+      status: 'pending',
+      description: ''
+  });
     setErrors('');
     setIsModalOpen(false);
   };

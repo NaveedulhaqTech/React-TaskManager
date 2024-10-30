@@ -50,6 +50,10 @@
 /* App.css */
 body {
   transition: background-color 0.3s ease;
+  font-family: 'Source Sans Pro', sans-serif;
+
+
+
 }
 
 .backdrop-blur-sm {

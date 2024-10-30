@@ -4,36 +4,42 @@ import { FaPlus, FaEdit, FaTimes } from 'react-icons/fa';
 const TaskInput = ({ handleUpdate, handleAddTask, handleCancel, singleTask, setSingleTask, editingId, errors, isLightMode }) => {
     return (
         <div className={`flex flex-col w-full p-4 rounded-lg shadow-lg ${isLightMode ? 'bg-white' : 'bg-[#1B1B2A]'}`}>
-            {/* Task Title */}
-            <label className="mb-2 font-semibold">Task Title</label>
-            <input
-                type='text'
-                placeholder='What Next?'
-                value={singleTask.text}
-                onChange={(e) => setSingleTask({ ...singleTask, text: e.target.value })}
-                className={`w-full p-4 mb-4 rounded-lg transition duration-300 ${isLightMode ? 'bg-white text-black' : 'bg-[#1B1B2A] text-[#EAEAEA]'}`}
-            />
-            
-            {/* Due Date */}
-            <label className="mb-2 font-semibold">Due Date</label>
-            <input
-                type='date'
-                value={singleTask.dueDate}
-                onChange={(e) => setSingleTask({ ...singleTask, dueDate: e.target.value })}
-                className={`w-full p-4 mb-4 rounded-lg transition duration-300 ${isLightMode ? 'bg-white text-black' : 'bg-[#1B1B2A] text-[#EAEAEA]'}`}
-            />
+            {/* Task Title and Due Date */}
+            <div className="flex justify-between mb-4">
+                <div className="w-1/2 pr-2">
+                    <label className="mb-2 font-semibold">Task Title</label>
+                    <input
+                        type='text'
+                        placeholder='What Next?'
+                        value={singleTask.text}
+                        onChange={(e) => setSingleTask({ ...singleTask, text: e.target.value })}
+                        className={`w-full p-4 rounded-lg transition duration-300 ${isLightMode ? 'bg-white text-black' : 'bg-[#1B1B2A] text-[#EAEAEA]'}`}
+                    />
+                </div>
+                <div className="w-1/2 pl-2">
+                    <label className="mb-2 font-semibold">Due Date</label>
+                    <input
+                        type='date'
+                        value={singleTask.dueDate}
+                        onChange={(e) => setSingleTask({ ...singleTask, dueDate: e.target.value })}
+                        className={`w-full p-4 rounded-lg transition duration-300 ${isLightMode ? 'bg-white text-black' : 'bg-[#1B1B2A] text-[#EAEAEA]'}`}
+                    />
+                </div>
+            </div>
 
-            {/* Priority */}
-            <label className="mb-2 font-semibold">Priority</label>
-            <select
-                value={singleTask.priority}
-                onChange={(e) => setSingleTask({ ...singleTask, priority: e.target.value })}
-                className={`w-full p-4 mb-4 rounded-lg transition duration-300 ${isLightMode ? 'bg-white text-black' : 'bg-[#1B1B2A] text-[#EAEAEA]'}`}
-            >
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
+            {/* Priority Centered */}
+            <div className="mb-4">
+                <label className="mb-2 font-semibold">Priority</label>
+                <select
+                    value={singleTask.priority}
+                    onChange={(e) => setSingleTask({ ...singleTask, priority: e.target.value })}
+                    className={`block w-full p-4 rounded-lg transition duration-300 ${isLightMode ? 'bg-white text-black' : 'bg-[#1B1B2A] text-[#EAEAEA]'}`}
+                >
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>
 
             {/* Description */}
             <label className="mb-2 font-semibold">Description</label>
@@ -44,6 +50,7 @@ const TaskInput = ({ handleUpdate, handleAddTask, handleCancel, singleTask, setS
                 className={`w-full p-4 mb-4 rounded-lg transition duration-300 ${isLightMode ? 'bg-white text-black' : 'bg-[#1B1B2A] text-[#EAEAEA]'}`}
             />
 
+            {/* Action Buttons */}
             <div className="flex mt-2 gap-2">
                 <button
                     onClick={editingId ? handleUpdate : handleAddTask}
@@ -59,6 +66,7 @@ const TaskInput = ({ handleUpdate, handleAddTask, handleCancel, singleTask, setS
                 </button>
             </div>
 
+            {/* Error Message */}
             {errors && (
                 <p className={`mt-2 p-2 rounded-lg text-center ${isLightMode ? 'bg-red-200 text-red-800' : 'bg-red-600 text-white'}`}>
                     {errors}

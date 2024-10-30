@@ -38,15 +38,15 @@ const App = () => {
 
   return (
     <div className={`flex justify-center items-center min-h-screen ${darkMode ? 'bg-gray-900 text-gray-300' : 'bg-white text-black'}`}>
-      <div className={`max-w-lg w-full p-6 rounded-lg shadow-lg ${darkMode ? 'bg-gradient-to-br from-gray-800 to-gray-900' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
-        <h1 className="text-4xl text-center text-red-500 mb-6 font-mono">Task Manager</h1>
+      <div className={`relative max-w-lg w-full p-6 rounded-lg shadow-lg ${darkMode ? 'bg-gradient-to-br from-gray-800 to-gray-900' : 'bg-gradient-to-br from-gray-100 to-gray-200'}`}>
+        <h1 className="text-4xl text-center text-red-500 mb-12 font-mono">Task Manager</h1>
 
         <button
-          className={`mb-4 flex items-center justify-center px-6 py-3 text-lg text-white rounded-lg transition duration-300 ${darkMode ? 'bg-gray-800' : 'bg-gray-400'} hover:shadow-lg`}
+          className={`absolute top-6 mb-4 flex items-center justify-center px-2 py-2 text-lg rounded-lg transition duration-300 ${darkMode ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black'} hover:shadow-lg`}
           onClick={() => setDarkMode(prev => !prev)}
         >
           {darkMode ? <MdOutlineLightMode size={24} /> : <MdOutlineDarkMode size={24} />}
-          <span className="ml-2">{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+          
         </button>
 
         <button
